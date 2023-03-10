@@ -15,11 +15,11 @@ const PORT = process.env.PORT || 3002;
 class Forecast {
   constructor(ForecastObject){
     this.date = ForecastObject.datetime;
-    this.description = ForecastObject.weather.description
+    this.description = ForecastObject.weather.description;
   }
 }
 // routes
-app.get('/data', (req, res, next) => {
+app.get('/weather', (req, res, next) => {
   // res.send('hello from our server');
   try {
     let cityReq = req.query.searchQuery;
