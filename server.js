@@ -47,11 +47,11 @@ app.get('/weather', (req, res, next) => {
 
 app.get('*', (req, res) => {
   res.send('the resource does not exist');
-})
+});
 
-app.use((error, request, response, next) => {
-  response.status(500).send(error.message);
-})
+app.use((error, req, res) => {
+  res.status(500).send(error.message);
+});
 
 // Listen is a express method takes in two arguments, port value and a call back function
 app.listen(PORT, () => console.log(`listening on ${PORT}`));
